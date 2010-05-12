@@ -17,7 +17,8 @@ consonant = {
        , [  0,    30,   10 ] ],
   's': [ [ "L",  -90,   20 ]
        , [  180,  40,   0  ]
-       , [  135,  50,  -10 ] ]
+       , [  135,  50,  -10 ] ],
+ none: [ [  180,  40,   0  ] ]
 }
 
 vowel = {
@@ -35,8 +36,12 @@ vowel = {
 }
 
 addition = {
-  'n': [ [ "L", 90, 35 ]
-       , [ 90,  35, 0  ] ]
+  'n':  [ [ "L",  90,  35 ]
+        , [ 90,   35,  0  ] ],
+  'ng': [ [ "L",  90,  35 ]
+        , [ 90,   35,  10 ]
+        , [ "L", -90,  10 ]
+        , [ -90,  35, -10 ] ]
 }
 
 function draw() { 
@@ -48,7 +53,7 @@ function draw() {
   ctx.textAlign = "center";
   ctx.font = "36px Myriad Pro";
   ctx.save();
-  ctx.translate(120, 150);
+  ctx.translate(80, 150);
   ctx.strokeStyle = tone.flat;
   draw_figure(ctx, consonant.y);
   draw_figure(ctx, vowel.a);
@@ -56,7 +61,7 @@ function draw() {
   ctx.restore();
 
   ctx.save();
-  ctx.translate(200, 150);
+  ctx.translate(160, 150);
   ctx.strokeStyle = tone.rising;
   draw_figure(ctx, consonant.s);
   draw_figure(ctx, vowel.u);
@@ -64,11 +69,20 @@ function draw() {
   ctx.restore();
 
   ctx.save();
-  ctx.translate(280, 150);
+  ctx.translate(240, 150);
   ctx.strokeStyle = tone.falling;
   draw_figure(ctx, consonant.t);
   draw_figure(ctx, vowel.e);
   draw_figure(ctx, addition.n);
   ctx.fillText("tèn", 0, 60);
+  ctx.restore();
+
+  ctx.save();
+  ctx.translate(320, 150);
+  ctx.strokeStyle = tone.rising;
+  draw_figure(ctx, consonant.none);
+  draw_figure(ctx, vowel.a);
+  draw_figure(ctx, addition.ng);
+  ctx.fillText("áng?", 0, 60);
   ctx.restore();
 }
