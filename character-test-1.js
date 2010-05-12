@@ -74,5 +74,5 @@ function draw() {
   draw_character(ctx, 400+90*-1, 300 + 40, 'flat', 'ch', 'e', 'ng');
   draw_character(ctx, 400+90* 0, 300 + 40, null, 't', null, null);
   draw_character(ctx, 400+90*+1, 300 + 40, 'flat', 'y', 'a', 'n');
-  draw_character(ctx, 400+90*+2, 300 + 40, 'flat', null, 'i', null);
+  draw_character(ctx, 400+90*+2, 300 + 40, 'rising', null, 'i', null);
 }
