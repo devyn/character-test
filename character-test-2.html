@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" value="text/html;charset=utf-8"/>
+    <script src="draw_figure.js"></script>
+    <script src="draw_character.js"></script>
+    <script src="dictionary.js"></script>
+    <script src="character-test-2.js"></script>
+  </head>
+  <body onload="init()">
+    <div style="text-align:center">
+      <div style="width:250">
+        <canvas width="120" height="180" id="char"></canvas>
+      </div>
+      <div style="width:250">
+        <select id="s_consonant" onchange="redraw()"></select>
+        <select id="s_vowel" onchange="redraw()"></select>
+        <select id="s_addition" onchange="redraw()"></select>
+        <select id="s_tone" onchange="redraw()"></select>
+      </div>
+    </div>
+  </body>
+</html>
